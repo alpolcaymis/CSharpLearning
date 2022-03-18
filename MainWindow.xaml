@@ -1,0 +1,39 @@
+﻿<Window x:Class="WPF_01C.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_01C"
+        mc:Ignorable="d"
+        Title="MyFirstGUI" Height="750" Width="525">
+
+
+    <StackPanel>
+        <!-- Target: TextBox -->
+        <!-- Binding Source: Slider -->
+        
+        <TextBox Width="100" Margin="50" Text="{Binding ElementName=MySlider, Path=Value, Mode=OneWay}"></TextBox>
+        <Slider IsSnapToTickEnabled="True" Name="MySlider" Minimum="0" Maximum="100"></Slider>
+
+        <TextBox Width="100" Margin="50" Text="{Binding ElementName=MySlider2, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Slider IsSnapToTickEnabled="True" Name="MySlider2" Minimum="0" Maximum="100"></Slider>
+
+        
+        <TextBox Width="100" Margin="50" Text="{Binding ElementName=MySlider3, Path=Value, Mode=OneWayToSource}"></TextBox>
+        <Slider IsSnapToTickEnabled="True" Name="MySlider3" Minimum="0" Maximum="100"></Slider>
+
+        <!-- OneTime: done in constructor so only once during intialization -->
+        <!-- we named textbox to access from code -->
+        <TextBox Name="MyTextBox4" Width="100" Margin="50" Text="{Binding ElementName=MySlider4, Path=Value, Mode=OneTime}"></TextBox>
+        <Slider IsSnapToTickEnabled="True" Name="MySlider4" Minimum="0" Maximum="100"></Slider>
+    </StackPanel>
+        
+
+
+
+
+    
+    
+
+  
+</Window>

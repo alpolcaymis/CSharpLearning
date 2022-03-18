@@ -20,18 +20,20 @@ namespace WPF_01C
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int MyProperty
-        {
-            get { return (int)GetValue(myDependencyProperty); }
-            set { SetValue(myDependencyProperty, value); }
-        }
-
-        public static readonly DependencyProperty myDependencyProperty =
-            DependencyProperty.Register("MyProperty" , typeof(int), typeof(MainWindow), new PropertyMetadata(0));
-
+       
         public MainWindow()
         {
-            InitializeComponent();                
+            InitializeComponent();
+
+            // OneTime mode
+
+            // slider will start at 30
+            MySlider4.Value = 30;
+            
+            //To access to textbox we gave a name
+            MyTextBox4.Text = MySlider4.Value.ToString();
+
         }
+
     }
 }
